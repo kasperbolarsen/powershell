@@ -1,15 +1,15 @@
 ﻿<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html lang="en">
-  
+
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Invoke-PnPGraphMethod | PnP PowerShell </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Invoke-PnPGraphMethod | PnP PowerShell ">
-    <meta name="generator" content="docfx 2.51.0.0">
-    <meta name="description" content="PnP PowerShell is an open source, community driven, PowerShell Module designed to work with Microsoft 365.">
+    <meta name="generator" content="docfx ">
+  <meta name="description" content="PnP PowerShell is an open source, community driven, PowerShell Module designed to work with Microsoft 365.">
     <link rel="shortcut icon" href="https://c.s-microsoft.com/favicon.ico?v2">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
     <link rel="stylesheet" href="../styles/docfx.css">
@@ -17,13 +17,13 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
     <meta property="docfx:navrel" content="../toc.html">
     <meta property="docfx:tocrel" content="toc.html">
-    
-    <meta property="docfx:rel" content="../">
-    <meta property="docfx:newtab" content="true">
+  
+  <meta property="docfx:rel" content="../">
+  <meta property="docfx:newtab" content="true">
   </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
       <header>
-        
+
         <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
           <div class="container">
             <div class="navbar-header">
@@ -33,7 +33,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              
+
               <a class="navbar-brand" href="../index.html">
                 <img id="logo" class="svg" src="../images/logo.svg" alt="">
               </a>
@@ -47,7 +47,7 @@
               </form>
             </div>
           </div>
-        </nav>        
+        </nav>
         <div class="subnav navbar navbar-default">
           <div class="container hide-when-search" id="breadcrumb">
             <ul class="breadcrumb">
@@ -57,17 +57,17 @@
         </div>
       </header>
       <div class="container body-content">
-        
+
         <div id="search-results">
-          <div class="search-list"></div>
+          <div class="search-list">Search Results for <span></span></div>
           <div class="sr-items">
             <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
           </div>
-          <ul id="pagination"></ul>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
         </div>
       </div>
       <div role="main" class="container body-content hide-when-search">
-        
+
         <div class="sidenav hide-when-search">
           <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
           <div class="sidetoggle collapse" id="sidetoggle">
@@ -79,15 +79,16 @@
             <article class="content wrap" id="_content" data-uid="">
                 
                   <div class="contribution-panel mobile-hide pull-right">
-                      <a href="https://github.com/pnp/powershell/blob/dev/documentation/#L1" title="Improve this Doc" class="improve-doc-lg"><i class="glyphicon glyphicon-pencil"></i></a>
+                      <a href="https://github.com/pnp/powershell/blob/dev/documentation/#L1" title="Edit this page" class="improve-doc-lg"><i class="glyphicon glyphicon-pencil"></i></a>
                   </div>
-                    <h1 id="invoke-pnpgraphmethod">Invoke-PnPGraphMethod</h1>
+  <h1 id="invoke-pnpgraphmethod">Invoke-PnPGraphMethod</h1>
 
 <h2 id="synopsis">SYNOPSIS</h2>
 <p>Invokes a REST request towards the Microsoft Graph API</p>
 <h2 id="syntax">SYNTAX</h2>
+<h3 id="out-to-console-default">Out to console (Default)</h3>
 <pre><code class="lang-powershell">Invoke-PnPGraphMethod -Url &lt;String&gt;
-                      [-AdditionalHeaders &lt;System.Collections.Generic.IDictionary`2[System.String,System.String]&gt;]
+                      [-AdditionalHeaders GraphAdditionalHeadersPipeBind]
                       [[-Method] &lt;HttpRequestMethod&gt;] 
                       [-Content &lt;Object&gt;] 
                       [-ContentType &lt;String&gt;] 
@@ -95,7 +96,29 @@
                       [-Raw]
                       [-All] 
                       [-Connection &lt;PnPConnection&gt;]
-                      [&lt;CommonParameters&gt;]
+                      [-Verbose]
+</code></pre>
+<h3 id="out-to-file">Out to file</h3>
+<pre><code class="lang-powershell">Invoke-PnPGraphMethod -Url &lt;String&gt;
+                      [-AdditionalHeaders GraphAdditionalHeadersPipeBind]
+                      [[-Method] &lt;HttpRequestMethod&gt;] 
+                      [-Content &lt;Object&gt;] 
+                      [-ContentType &lt;String&gt;] 
+                      [-ConsistencyLevelEventual] 
+                      [-Connection &lt;PnPConnection&gt;]
+                      [-OutFile &lt;String&gt;]
+                      [-Verbose]
+</code></pre>
+<h3 id="out-to-stream">Out to stream</h3>
+<pre><code class="lang-powershell">Invoke-PnPGraphMethod -Url &lt;String&gt;
+                      [-AdditionalHeaders GraphAdditionalHeadersPipeBind]
+                      [[-Method] &lt;HttpRequestMethod&gt;] 
+                      [-Content &lt;Object&gt;] 
+                      [-ContentType &lt;String&gt;] 
+                      [-ConsistencyLevelEventual] 
+                      [-Connection &lt;PnPConnection&gt;]
+                      [-OutStream]
+                      [-Verbose]
 </code></pre>
 <h2 id="description">DESCRIPTION</h2>
 <p>Invokes a REST request towards the Microsoft Graph API. It will take care of potential throttling retries that are needed to retrieve the data.</p>
@@ -118,13 +141,29 @@ Invoke-PnPGraphMethod -Url 'groups/{id}?`$select=hideFromOutlookClients'
 </code></pre>
 <p>Get users with advanced query capabilities. Use of -ConsistencyLevelEventual.</p>
 <h3 id="example-5">Example 5</h3>
-<pre><code class="lang-powershell">Invoke-PnPGraphMethod &quot;https://graph.microsoft.com/v1.0/users&quot;
+<pre><code class="lang-powershell">Invoke-PnPGraphMethod -Url &quot;https://graph.microsoft.com/v1.0/users&quot;
 </code></pre>
 <p>Performs a GET request to retrieve users from the Microsoft Graph API using the full URL.</p>
+<h3 id="example-6">Example 6</h3>
+<pre><code class="lang-powershell">Invoke-PnPGraphMethod -Url &quot;https://graph.microsoft.com/v1.0/users/user@contoso.com/photo/`$value&quot; -OutFile c:\temp\photo.jpg
+</code></pre>
+<p>Downloads the user profile photo of the specified user to the specified file.</p>
+<h3 id="example-7">Example 7</h3>
+<pre><code class="lang-powershell">Invoke-PnPGraphMethod -Url &quot;https://graph.microsoft.com/v1.0/users/user@contoso.com/photo/`$value&quot; -OutStream | Add-PnPFile -FileName user.jpg -Folder &quot;Shared Documents&quot;
+</code></pre>
+<p>Takes the user profile photo of the specified user and uploads it to the specified library in SharePoint Online.</p>
+<h3 id="example-8">Example 8</h3>
+<pre><code class="lang-powershell">$task = Invoke-PnPGraphMethod -Url &quot;https://graph.microsoft.com/v1.0/planner/tasks/23fasefxcvzvsdf32e&quot; # retrieve the task so we can figure out the etag which is needed to update the task
+$etag = $task.'@odata.etag'
+$headers = @{&quot;If-Match&quot;=$etag} 
+$content = @{&quot;title&quot;=&quot;My new task title&quot;}
+Invoke-PnPGraphMethod -Url &quot;https://graph.microsoft.com/v1.0/planner/tasks/23fasefxcvzvsdf32e&quot; -Method PATCH -Content $content -AdditionalHeaders $headers
+</code></pre>
+<p>This example retrieves a Planner task to find the etag value which is required to update the task. In order to update the task through call to the Microsoft Graph API we need to include an If-Match header with the value of the etag. It then creates the content to update, in this case the title of the task, and calls the PATCH method on the Graph end-point to update the specific task.</p>
 <h2 id="parameters">PARAMETERS</h2>
 <h3 id="-additionalheaders">-AdditionalHeaders</h3>
-<p>Additional request headers</p>
-<pre><code class="lang-yaml">Type: System.Collections.Generic.IDictionary`2[System.String,System.String]
+<p>Additional request headers, either by providing a Dictionary&lt;string,string&gt; or a Hastable, .e.g -AdditionalHeaders @{&quot;If-Match&quot;=&quot;234567tysfssdvsadf&quot;}</p>
+<pre><code class="lang-yaml">Type: GraphAdditionalHeaderPipeBind
 Parameter Sets: (All)
 Aliases:
 
@@ -137,7 +176,7 @@ Accept wildcard characters: False
 <h3 id="-all">-All</h3>
 <p>Retrieve all pages of results. This will loop through all @odata.nextLink. This flag will only be respected if the request is a GET request.</p>
 <pre><code class="lang-yaml">Type: SwitchParameter
-Parameter Sets: (All)
+Parameter Sets: Out to console
 Aliases:
 
 Required: False
@@ -208,10 +247,34 @@ Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 </code></pre>
+<h3 id="-outfile">-OutFile</h3>
+<p>The full path including filename to write the output to, i.e. c:\temp\myfile.txt. Existing files will be overwritten.</p>
+<pre><code class="lang-yaml">Type: String
+Parameter Sets: Out to file
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+<h3 id="-outstream">-OutStream</h3>
+<p>Indicates that the result of the request should be returned as a memory stream.</p>
+<pre><code class="lang-yaml">Type: String
+Parameter Sets: Out to stream
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
 <h3 id="-raw">-Raw</h3>
 <p>If specified the returned data will not be converted to an object but returned as a JSON string.</p>
 <pre><code class="lang-yaml">Type: SwitchParameter
-Parameter Sets: (All)
+Parameter Sets: Out to console
 Aliases:
 
 Required: False
@@ -234,6 +297,7 @@ Accept wildcard characters: False
 </code></pre>
 <h2 id="related-links">RELATED LINKS</h2>
 <p><a href="https://aka.ms/m365pnp">Microsoft 365 Patterns and Practices</a></p>
+
 </article>
           </div>
           <div class="hidden-sm col-md-2" role="complementary">
@@ -243,7 +307,7 @@ Accept wildcard characters: False
             </div>
           </div>        </div>
       </div>
-      
+
       <footer>
         <div class="grad-bottom"></div>
         <div class="footer">
@@ -251,13 +315,14 @@ Accept wildcard characters: False
             <span class="pull-right">
               <a href="#top">Back to top</a>
             </span>
-            
-            <span>Generated by <strong>DocFX</strong></span>
-            <img src="https://telemetry.sharepointpnp.com/@pnp.github.io/index/" alt="spacer">
+      
+      <span>Generated by <strong>DocFX</strong></span>
+            <img src="https://m365-visitor-stats.azurewebsites.net/@pnp.github.io/index/" alt="spacer">
           </div>
         </div>
-      </footer>    </div>
-    
+      </footer>
+    </div>
+
     <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
     <script type="text/javascript" src="../styles/docfx.js"></script>
     <script type="text/javascript" src="../styles/main.js"></script>

@@ -1,15 +1,15 @@
 ﻿<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html lang="en">
-  
+
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Set-PnPSite | PnP PowerShell </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Set-PnPSite | PnP PowerShell ">
-    <meta name="generator" content="docfx 2.51.0.0">
-    <meta name="description" content="PnP PowerShell is an open source, community driven, PowerShell Module designed to work with Microsoft 365.">
+    <meta name="generator" content="docfx ">
+  <meta name="description" content="PnP PowerShell is an open source, community driven, PowerShell Module designed to work with Microsoft 365.">
     <link rel="shortcut icon" href="https://c.s-microsoft.com/favicon.ico?v2">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
     <link rel="stylesheet" href="../styles/docfx.css">
@@ -17,13 +17,13 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
     <meta property="docfx:navrel" content="../toc.html">
     <meta property="docfx:tocrel" content="toc.html">
-    
-    <meta property="docfx:rel" content="../">
-    <meta property="docfx:newtab" content="true">
+  
+  <meta property="docfx:rel" content="../">
+  <meta property="docfx:newtab" content="true">
   </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
       <header>
-        
+
         <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
           <div class="container">
             <div class="navbar-header">
@@ -33,7 +33,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              
+
               <a class="navbar-brand" href="../index.html">
                 <img id="logo" class="svg" src="../images/logo.svg" alt="">
               </a>
@@ -47,7 +47,7 @@
               </form>
             </div>
           </div>
-        </nav>        
+        </nav>
         <div class="subnav navbar navbar-default">
           <div class="container hide-when-search" id="breadcrumb">
             <ul class="breadcrumb">
@@ -57,17 +57,17 @@
         </div>
       </header>
       <div class="container body-content">
-        
+
         <div id="search-results">
-          <div class="search-list"></div>
+          <div class="search-list">Search Results for <span></span></div>
           <div class="sr-items">
             <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
           </div>
-          <ul id="pagination"></ul>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
         </div>
       </div>
       <div role="main" class="container body-content hide-when-search">
-        
+
         <div class="sidenav hide-when-search">
           <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
           <div class="sidetoggle collapse" id="sidetoggle">
@@ -79,9 +79,9 @@
             <article class="content wrap" id="_content" data-uid="">
                 
                   <div class="contribution-panel mobile-hide pull-right">
-                      <a href="https://github.com/pnp/powershell/blob/dev/documentation/#L1" title="Improve this Doc" class="improve-doc-lg"><i class="glyphicon glyphicon-pencil"></i></a>
+                      <a href="https://github.com/pnp/powershell/blob/dev/documentation/#L1" title="Edit this page" class="improve-doc-lg"><i class="glyphicon glyphicon-pencil"></i></a>
                   </div>
-                    <h1 id="set-pnpsite">Set-PnPSite</h1>
+  <h1 id="set-pnpsite">Set-PnPSite</h1>
 
 <h2 id="synopsis">SYNOPSIS</h2>
 <p>Sets site collection properties.</p>
@@ -115,10 +115,14 @@
  [-SensitivityLabel &lt;Guid&gt;]
  [-RequestFilesLinkEnabled &lt;Boolean&gt;]
  [-ScriptSafeDomainName &lt;string&gt;]
+ [-BlockDownloadPolicy &lt;Boolean&gt;] [-ExcludeBlockDownloadPolicySiteOwners &lt;Boolean&gt;]
+ [-ExcludedBlockDownloadGroupIds &lt;Guid[]&gt;]
+ [-ListsShowHeaderAndNavigation &lt;Boolean&gt;]
+ [-RestrictContentOrgWideSearch &lt;Boolean&gt;]
  [-Connection &lt;PnPConnection&gt;]
 </code></pre>
 <h3 id="set-lock-state">Set Lock State</h3>
-<pre><code class="lang-powershell">Set-PnPSite [-Identity &lt;String&gt;] [-LockState &lt;SiteLockState&gt;] [-Wait] [-Connection &lt;PnPConnection&gt;] [&lt;CommonParameters&gt;]
+<pre><code class="lang-powershell">Set-PnPSite [-Identity &lt;String&gt;] [-LockState &lt;SiteLockState&gt;] [-Wait] [-Connection &lt;PnPConnection&gt;] 
 </code></pre>
 <h2 id="description">DESCRIPTION</h2>
 <p>Allows to modify a site properties.</p>
@@ -130,7 +134,7 @@
 <h3 id="example-2">EXAMPLE 2</h3>
 <pre><code class="lang-powershell">Set-PnPSite -Classification $null
 </code></pre>
-<p>Unsets the current site classification tag</p>
+<p>Un-sets the current site classification tag</p>
 <h3 id="example-3">EXAMPLE 3</h3>
 <pre><code class="lang-powershell">Set-PnPSite -DisableFlows
 </code></pre>
@@ -252,7 +256,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 </code></pre>
 <h3 id="-defaultlinktoexistingaccess">-DefaultLinkToExistingAccess</h3>
-<p>When set to $true, the DefaultSharingLinkType will be overriden and the default sharing link will be All People with Existing Access link (which does not modify permissions). When set to $false (the default), the default sharing link type is controlled by the DefaultSharingLinkType parameter</p>
+<p>When set to $true, the DefaultSharingLinkType will be overridden and the default sharing link will be All People with Existing Access link (which does not modify permissions). When set to $false (the default), the default sharing link type is controlled by the DefaultSharingLinkType parameter</p>
 <pre><code class="lang-yaml">Type: Boolean
 Parameter Sets: Set Properties
 Required: False
@@ -308,6 +312,18 @@ Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 </code></pre>
+<h3 id="-hidepeoplepreviewingfiles">-HidePeoplePreviewingFiles</h3>
+<p>Allows hiding of the presence indicators of users simultaneously editing files.</p>
+<pre><code class="lang-yaml">Type: String
+Parameter Sets: (All)
+Aliases: Url
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
 <h3 id="-identity">-Identity</h3>
 <p>The url of the site collection.</p>
 <pre><code class="lang-yaml">Type: String
@@ -332,7 +348,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 </code></pre>
 <h3 id="-lockstate">-LockState</h3>
-<p>Sets the lockstate of a site collection.</p>
+<p>Sets the lockState of a site collection.</p>
 <pre><code class="lang-yaml">Type: SiteLockState
 Parameter Sets: Set Lock State
 Accepted values: Unlock, NoAccess, ReadOnly
@@ -471,7 +487,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 </code></pre>
 <h3 id="-scriptsafedomainname">-ScriptSafeDomainName</h3>
-<p>Allow contributors to insert iframes only from the specified domains only</p>
+<p>Allow contributors to insert iframe only from the specified domains only</p>
 <pre><code class="lang-yaml">Type: String
 Parameter Sets: (All)
 
@@ -492,6 +508,61 @@ Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 </code></pre>
+<h3 id="-restrictcontentorgwidesearch">-RestrictContentOrgWideSearch</h3>
+<p>Allows for applying the Restricted Content Discoverability (RCD) setting to a site</p>
+<pre><code class="lang-yaml">Type: Boolean
+Parameter Sets: (All)
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+<h3 id="-blockdownloadpolicy">-BlockDownloadPolicy</h3>
+<p>Set this to true to block download of files from SharePoint sites or OneDrive</p>
+<pre><code class="lang-yaml">Type: Boolean
+Parameter Sets: Set Properties
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+<h3 id="-excludeblockdownloadpolicysiteowners">-ExcludeBlockDownloadPolicySiteOwners</h3>
+<p>Set this to true to exempts site owners from the block download policy so that they can fully download any content for the site.</p>
+<pre><code class="lang-yaml">Type: Boolean
+Parameter Sets: Set Properties
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+<h3 id="-excludedblockdownloadgroupids">-ExcludedBlockDownloadGroupIds</h3>
+<p>Exempts users from the mentioned groups from this policy and they can fully download any content for the site.</p>
+<pre><code class="lang-yaml">Type: GUID[]
+Parameter Sets: Set Properties
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+<h3 id="-listsshowheaderandnavigation">-ListsShowHeaderAndNavigation</h3>
+<p>Set a property on a site collection to make all lists always load with the site elements intact.</p>
+<pre><code class="lang-yaml">Type: Boolean
+Parameter Sets: Set Properties
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
 <h3 id="-wait">-Wait</h3>
 <p>Wait for the operation to complete</p>
 <pre><code class="lang-yaml">Type: SwitchParameter
@@ -505,6 +576,7 @@ Accept wildcard characters: False
 </code></pre>
 <h2 id="related-links">RELATED LINKS</h2>
 <p><a href="https://aka.ms/m365pnp">Microsoft 365 Patterns and Practices</a></p>
+
 </article>
           </div>
           <div class="hidden-sm col-md-2" role="complementary">
@@ -514,7 +586,7 @@ Accept wildcard characters: False
             </div>
           </div>        </div>
       </div>
-      
+
       <footer>
         <div class="grad-bottom"></div>
         <div class="footer">
@@ -522,13 +594,14 @@ Accept wildcard characters: False
             <span class="pull-right">
               <a href="#top">Back to top</a>
             </span>
-            
-            <span>Generated by <strong>DocFX</strong></span>
-            <img src="https://telemetry.sharepointpnp.com/@pnp.github.io/index/" alt="spacer">
+      
+      <span>Generated by <strong>DocFX</strong></span>
+            <img src="https://m365-visitor-stats.azurewebsites.net/@pnp.github.io/index/" alt="spacer">
           </div>
         </div>
-      </footer>    </div>
-    
+      </footer>
+    </div>
+
     <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
     <script type="text/javascript" src="../styles/docfx.js"></script>
     <script type="text/javascript" src="../styles/main.js"></script>

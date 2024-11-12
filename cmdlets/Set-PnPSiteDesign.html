@@ -1,15 +1,15 @@
 ﻿<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html lang="en">
-  
+
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Set-PnPSiteDesign | PnP PowerShell </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Set-PnPSiteDesign | PnP PowerShell ">
-    <meta name="generator" content="docfx 2.51.0.0">
-    <meta name="description" content="PnP PowerShell is an open source, community driven, PowerShell Module designed to work with Microsoft 365.">
+    <meta name="generator" content="docfx ">
+  <meta name="description" content="PnP PowerShell is an open source, community driven, PowerShell Module designed to work with Microsoft 365.">
     <link rel="shortcut icon" href="https://c.s-microsoft.com/favicon.ico?v2">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
     <link rel="stylesheet" href="../styles/docfx.css">
@@ -17,13 +17,13 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
     <meta property="docfx:navrel" content="../toc.html">
     <meta property="docfx:tocrel" content="toc.html">
-    
-    <meta property="docfx:rel" content="../">
-    <meta property="docfx:newtab" content="true">
+  
+  <meta property="docfx:rel" content="../">
+  <meta property="docfx:newtab" content="true">
   </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
       <header>
-        
+
         <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
           <div class="container">
             <div class="navbar-header">
@@ -33,7 +33,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              
+
               <a class="navbar-brand" href="../index.html">
                 <img id="logo" class="svg" src="../images/logo.svg" alt="">
               </a>
@@ -47,7 +47,7 @@
               </form>
             </div>
           </div>
-        </nav>        
+        </nav>
         <div class="subnav navbar navbar-default">
           <div class="container hide-when-search" id="breadcrumb">
             <ul class="breadcrumb">
@@ -57,17 +57,17 @@
         </div>
       </header>
       <div class="container body-content">
-        
+
         <div id="search-results">
-          <div class="search-list"></div>
+          <div class="search-list">Search Results for <span></span></div>
           <div class="sr-items">
             <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
           </div>
-          <ul id="pagination"></ul>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
         </div>
       </div>
       <div role="main" class="container body-content hide-when-search">
-        
+
         <div class="sidenav hide-when-search">
           <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
           <div class="sidetoggle collapse" id="sidetoggle">
@@ -79,38 +79,38 @@
             <article class="content wrap" id="_content" data-uid="">
                 
                   <div class="contribution-panel mobile-hide pull-right">
-                      <a href="https://github.com/pnp/powershell/blob/dev/documentation/#L1" title="Improve this Doc" class="improve-doc-lg"><i class="glyphicon glyphicon-pencil"></i></a>
+                      <a href="https://github.com/pnp/powershell/blob/dev/documentation/#L1" title="Edit this page" class="improve-doc-lg"><i class="glyphicon glyphicon-pencil"></i></a>
                   </div>
-                    <h1 id="set-pnpsitedesign">Set-PnPSiteDesign</h1>
+  <h1 id="set-pnpsitedesign">Set-PnPSiteDesign</h1>
 
 <h2 id="synopsis">SYNOPSIS</h2>
 <p><strong>Required Permissions</strong></p>
 <ul>
 <li>SharePoint: Access to the SharePoint Tenant Administration site</li>
 </ul>
-<p>Updates a Site Design on the current tenant.</p>
+<p>Updates a site design on the current tenant.</p>
 <h2 id="syntax">SYNTAX</h2>
 <pre><code class="lang-powershell">Set-PnPSiteDesign -Identity &lt;TenantSiteDesignPipeBind&gt; [-Title &lt;String&gt;] [-SiteScriptIds &lt;GuidPipeBind[]&gt;]
  [-Description &lt;String&gt;] [-IsDefault] [-PreviewImageAltText &lt;String&gt;] [-PreviewImageUrl &lt;String&gt;]
  [-WebTemplate &lt;SiteWebTemplate&gt;] [-Version &lt;Int32&gt;] [-ThumbnailUrl &lt;String&gt;] [-DesignPackageId &lt;Guid&gt;] [-Connection &lt;PnPConnection&gt;]  
- [&lt;CommonParameters&gt;]
+ 
 </code></pre>
 <h2 id="description">DESCRIPTION</h2>
-<p>Allows to update a Site Design on the current tenant.</p>
+<p>Allows to update a site design on the current tenant.</p>
 <h2 id="examples">EXAMPLES</h2>
 <h3 id="example-1">EXAMPLE 1</h3>
 <pre><code class="lang-powershell">Set-PnPSiteDesign -Identity 046e2e76-67ba-46ca-a5f6-8eb418a7821e -Title &quot;My Updated Company Design&quot;
 </code></pre>
-<p>Updates an existing Site Design and sets a new title.</p>
+<p>Updates an existing site design and sets a new title.</p>
 <h3 id="example-2">EXAMPLE 2</h3>
 <pre><code class="lang-powershell">$design = Get-PnPSiteDesign -Identity 046e2e76-67ba-46ca-a5f6-8eb418a7821e
 Set-PnPSiteDesign -Identity $design -Title &quot;My Updated Company Design&quot;
 </code></pre>
-<p>Updates an existing Site Design and sets a new title.</p>
+<p>Updates an existing site design and sets a new title.</p>
 <h3 id="example-3">EXAMPLE 3</h3>
 <pre><code class="lang-powershell">Set-PnPSiteDesign -Identity 046e2e76-67ba-46ca-a5f6-8eb418a7821e -Title &quot;My Company Design&quot; -Description &quot;My description&quot; -ThumbnailUrl &quot;https://contoso.sharepoint.com/sites/templates/my images/logo.png&quot;
 </code></pre>
-<p>Updates an existing Site Design, providing a new title, description and logo to be shown in the template picker. Notice that when the location for the TumbnailUrl contains a space, it should be provided URL decoded, so i.e. no %20 for spaces.</p>
+<p>Updates an existing site design, providing a new title, description and logo to be shown in the template picker. Notice that when the location for the ThumbnailUrl contains a space, it should be provided URL decoded, so i.e. no %20 for spaces.</p>
 <h2 id="parameters">PARAMETERS</h2>
 <h3 id="-connection">-Connection</h3>
 <p>Optional connection to be used by the cmdlet. Retrieve the value for this parameter by either specifying -ReturnConnection on Connect-PnPOnline or by executing Get-PnPConnection.</p>
@@ -124,7 +124,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 </code></pre>
 <h3 id="-description">-Description</h3>
-<p>The description of the site design</p>
+<p>The description of the site design.</p>
 <pre><code class="lang-yaml">Type: String
 Parameter Sets: (All)
 
@@ -134,8 +134,19 @@ Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 </code></pre>
+<h3 id="-designpackageid">-DesignPackageId</h3>
+<p>Sets the design package Id of this site design.</p>
+<pre><code class="lang-yaml">Type: Guid
+Parameter Sets: (All)
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
 <h3 id="-identity">-Identity</h3>
-<p>The guid or an object representing the site design</p>
+<p>The guid or an object representing the site design.</p>
 <pre><code class="lang-yaml">Type: TenantSiteDesignPipeBind
 Parameter Sets: (All)
 
@@ -146,7 +157,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 </code></pre>
 <h3 id="-isdefault">-IsDefault</h3>
-<p>Specifies if the site design is a default site design</p>
+<p>Specifies if the site design is a default site design.</p>
 <pre><code class="lang-yaml">Type: SwitchParameter
 Parameter Sets: (All)
 
@@ -179,43 +190,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 </code></pre>
 <h3 id="-sitescriptids">-SiteScriptIds</h3>
-<p>An array of guids of site scripts</p>
+<p>An array of guids of site scripts.</p>
 <pre><code class="lang-yaml">Type: Guid[]
 Parameter Sets: (All)
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-</code></pre>
-<h3 id="-title">-Title</h3>
-<p>The title of the site design</p>
-<pre><code class="lang-yaml">Type: String
-Parameter Sets: (All)
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-</code></pre>
-<h3 id="-version">-Version</h3>
-<p>Specifies the version of the design</p>
-<pre><code class="lang-yaml">Type: Int32
-Parameter Sets: (All)
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-</code></pre>
-<h3 id="-webtemplate">-WebTemplate</h3>
-<p>Specifies the type of site to which this design applies</p>
-<pre><code class="lang-yaml">Type: SiteWebTemplate
-Parameter Sets: (All)
-Accepted values: TeamSite, CommunicationSite, GrouplessTeamSite, ChannelSite
 
 Required: False
 Position: Named
@@ -234,11 +211,33 @@ Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 </code></pre>
-<h3 id="-designpackageid">-DesignPackageId</h3>
-<p>Sets the design package Id of this site design.</p>
+<h3 id="-title">-Title</h3>
+<p>The title of the site design.</p>
+<pre><code class="lang-yaml">Type: String
+Parameter Sets: (All)
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+<h3 id="-version">-Version</h3>
+<p>Specifies the version of the design.</p>
+<pre><code class="lang-yaml">Type: Int32
+Parameter Sets: (All)
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+<h3 id="-webtemplate">-WebTemplate</h3>
+<p>Specifies the type of site to which this design applies.</p>
 <pre><code class="lang-yaml">Type: SiteWebTemplate
 Parameter Sets: (All)
-Accepted values: TeamSite, CommunicationSite
+Accepted values: TeamSite, CommunicationSite, GrouplessTeamSite, ChannelSite
 
 Required: False
 Position: Named
@@ -248,6 +247,7 @@ Accept wildcard characters: False
 </code></pre>
 <h2 id="related-links">RELATED LINKS</h2>
 <p><a href="https://aka.ms/m365pnp">Microsoft 365 Patterns and Practices</a></p>
+
 </article>
           </div>
           <div class="hidden-sm col-md-2" role="complementary">
@@ -257,7 +257,7 @@ Accept wildcard characters: False
             </div>
           </div>        </div>
       </div>
-      
+
       <footer>
         <div class="grad-bottom"></div>
         <div class="footer">
@@ -265,13 +265,14 @@ Accept wildcard characters: False
             <span class="pull-right">
               <a href="#top">Back to top</a>
             </span>
-            
-            <span>Generated by <strong>DocFX</strong></span>
-            <img src="https://telemetry.sharepointpnp.com/@pnp.github.io/index/" alt="spacer">
+      
+      <span>Generated by <strong>DocFX</strong></span>
+            <img src="https://m365-visitor-stats.azurewebsites.net/@pnp.github.io/index/" alt="spacer">
           </div>
         </div>
-      </footer>    </div>
-    
+      </footer>
+    </div>
+
     <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
     <script type="text/javascript" src="../styles/docfx.js"></script>
     <script type="text/javascript" src="../styles/main.js"></script>

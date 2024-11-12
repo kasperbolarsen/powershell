@@ -1,15 +1,15 @@
 ﻿<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html lang="en">
-  
+
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Set-PnPPage | PnP PowerShell </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Set-PnPPage | PnP PowerShell ">
-    <meta name="generator" content="docfx 2.51.0.0">
-    <meta name="description" content="PnP PowerShell is an open source, community driven, PowerShell Module designed to work with Microsoft 365.">
+    <meta name="generator" content="docfx ">
+  <meta name="description" content="PnP PowerShell is an open source, community driven, PowerShell Module designed to work with Microsoft 365.">
     <link rel="shortcut icon" href="https://c.s-microsoft.com/favicon.ico?v2">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
     <link rel="stylesheet" href="../styles/docfx.css">
@@ -17,13 +17,13 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
     <meta property="docfx:navrel" content="../toc.html">
     <meta property="docfx:tocrel" content="toc.html">
-    
-    <meta property="docfx:rel" content="../">
-    <meta property="docfx:newtab" content="true">
+  
+  <meta property="docfx:rel" content="../">
+  <meta property="docfx:newtab" content="true">
   </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
       <header>
-        
+
         <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
           <div class="container">
             <div class="navbar-header">
@@ -33,7 +33,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              
+
               <a class="navbar-brand" href="../index.html">
                 <img id="logo" class="svg" src="../images/logo.svg" alt="">
               </a>
@@ -47,7 +47,7 @@
               </form>
             </div>
           </div>
-        </nav>        
+        </nav>
         <div class="subnav navbar navbar-default">
           <div class="container hide-when-search" id="breadcrumb">
             <ul class="breadcrumb">
@@ -57,17 +57,17 @@
         </div>
       </header>
       <div class="container body-content">
-        
+
         <div id="search-results">
-          <div class="search-list"></div>
+          <div class="search-list">Search Results for <span></span></div>
           <div class="sr-items">
             <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
           </div>
-          <ul id="pagination"></ul>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
         </div>
       </div>
       <div role="main" class="container body-content hide-when-search">
-        
+
         <div class="sidenav hide-when-search">
           <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
           <div class="sidetoggle collapse" id="sidetoggle">
@@ -79,19 +79,19 @@
             <article class="content wrap" id="_content" data-uid="">
                 
                   <div class="contribution-panel mobile-hide pull-right">
-                      <a href="https://github.com/pnp/powershell/blob/dev/documentation/#L1" title="Improve this Doc" class="improve-doc-lg"><i class="glyphicon glyphicon-pencil"></i></a>
+                      <a href="https://github.com/pnp/powershell/blob/dev/documentation/#L1" title="Edit this page" class="improve-doc-lg"><i class="glyphicon glyphicon-pencil"></i></a>
                   </div>
-                    <h1 id="set-pnppage">Set-PnPPage</h1>
+  <h1 id="set-pnppage">Set-PnPPage</h1>
 
 <h2 id="synopsis">SYNOPSIS</h2>
-<p>Sets parameters of a page</p>
+<p>Sets parameters of a page.</p>
 <h2 id="syntax">SYNTAX</h2>
-<pre><code class="lang-powershell">Set-PnPPage [-Identity] &lt;PagePipeBind&gt; [-Name &lt;String&gt;] [-Title &lt;String&gt;]
+<pre><code class="lang-powershell">Set-PnPPage -Identity &lt;PagePipeBind&gt; [-Name &lt;String&gt;] [-Title &lt;String&gt;]
  [-LayoutType &lt;PageLayoutType&gt;] [-PromoteAs &lt;PagePromoteType&gt;] [-CommentsEnabled]
  [-Publish] [-HeaderType &lt;PageHeaderType&gt;] [-HeaderLayoutType &lt;PageHeaderLayoutType&gt;] [-ScheduledPublishDate &lt;DateTime&gt;] 
- [-RemoveScheduledPublish] [-ContentType &lt;ContentTypePipeBind&gt;] [-ThumbnailUrl &lt;String&gt;] 
+ [-RemoveScheduledPublish] [-ContentType &lt;ContentTypePipeBind&gt;] [-ThumbnailUrl &lt;String&gt;] [-ShowPublishDate &lt;Boolean&gt;]
  [-Translate][-TranslationLanguageCodes &lt;Int[][]&gt;]
- [-Connection &lt;PnPConnection&gt;] [&lt;CommonParameters&gt;]
+ [-Connection &lt;PnPConnection&gt;] 
 </code></pre>
 <h2 id="description">DESCRIPTION</h2>
 <p>Sets parameters of a page. All pages must be located inside the Site Pages library.</p>
@@ -99,46 +99,58 @@
 <h3 id="example-1">EXAMPLE 1</h3>
 <pre><code class="lang-powershell">Set-PnPPage -Identity &quot;MyPage&quot; -LayoutType Home -Title &quot;My Page&quot;
 </code></pre>
-<p>Updates the properties of the page named 'MyPage'</p>
+<p>Updates the properties of the page named 'MyPage'.</p>
 <h3 id="example-2">EXAMPLE 2</h3>
 <pre><code class="lang-powershell">Set-PnPPage -Identity &quot;MyPage&quot; -CommentsEnabled
 </code></pre>
-<p>Enables the comments on the page named 'MyPage'</p>
+<p>Enables the comments on the page named 'MyPage'.</p>
 <h3 id="example-3">EXAMPLE 3</h3>
 <pre><code class="lang-powershell">Set-PnPPage -Identity &quot;MyPage&quot; -CommentsEnabled:$false
 </code></pre>
-<p>Disables the comments on the page named 'MyPage'</p>
+<p>Disables the comments on the page named 'MyPage'.</p>
 <h3 id="example-4">EXAMPLE 4</h3>
 <pre><code class="lang-powershell">Set-PnPPage -Identity &quot;hr/MyPage&quot; -HeaderType Default
 </code></pre>
-<p>Sets the header of the page called MyPage located in the folder hr inside the Site Pages library to the default header</p>
+<p>Sets the header of the page called MyPage located in the folder hr inside the Site Pages library to the default header.</p>
 <h3 id="example-5">EXAMPLE 5</h3>
 <pre><code class="lang-powershell">Set-PnPPage -Identity &quot;MyPage&quot; -HeaderType None
 </code></pre>
-<p>Removes the header of the page</p>
+<p>Removes the header of the page.</p>
 <h3 id="example-6">EXAMPLE 6</h3>
 <pre><code class="lang-powershell">Set-PnPPage -Identity &quot;MyPage&quot; -HeaderType Custom -ServerRelativeImageUrl &quot;/sites/demo1/assets/myimage.png&quot; -TranslateX 10.5 -TranslateY 11.0
 </code></pre>
-<p>Sets the header of the page to custom header, using the specified image and translates the location of the image in the header given the values specified</p>
+<p>Sets the header of the page to custom header, using the specified image and translates the location of the image in the header given the values specified.</p>
 <h3 id="example-7">EXAMPLE 7</h3>
 <pre><code class="lang-powershell">Set-PnPPage -Identity &quot;MyPage&quot; -ScheduledPublishDate (Get-Date).AddHours(1)
 </code></pre>
-<p>Schedules the page &quot;MyPage&quot; to be published in one hour from now</p>
+<p>Schedules the page &quot;MyPage&quot; to be published in one hour from now.</p>
 <h3 id="example-8">EXAMPLE 8</h3>
-<pre><code class="lang-powershell">Set-PnPPage -Name &quot;NewPage&quot; -Translate
+<pre><code class="lang-powershell">Set-PnPPage -Identity &quot;MyPage&quot; -Translate
 </code></pre>
 <p>Creates the necessary translated pages for all the supported languages in the site collection.</p>
 <h3 id="example-9">EXAMPLE 9</h3>
-<pre><code class="lang-powershell">Set-PnPPage -Name &quot;NewPage&quot; -Translate -TranslationLanguageCodes 1043
+<pre><code class="lang-powershell">Set-PnPPage -Identity &quot;MyPage&quot; -Translate -TranslationLanguageCodes 1043
 </code></pre>
 <p>Creates the necessary translated page for the specified language in the site collection. In this case, it will create the translated page for Dutch language. If the Dutch language is not enabled, it will enable the language and then create the translated page.</p>
 <h3 id="example-10">EXAMPLE 10</h3>
-<pre><code class="lang-powershell">Set-PnPPage -Name &quot;NewPage&quot; -Translate -TranslationLanguageCodes 1043,1035
+<pre><code class="lang-powershell">Set-PnPPage -Identity &quot;MyPage&quot; -Translate -TranslationLanguageCodes 1043,1035
 </code></pre>
 <p>Creates the necessary translated page for the specified languages in the site collection. In this case, it will create the translated pages for Dutch and Finnish languages. If these languages are not enabled, it will enable these languages and then create the translated pages for the specified languages.</p>
+<h3 id="example-11">EXAMPLE 11</h3>
+<pre><code class="lang-powershell">Set-PnPPage -Identity &quot;MyPage&quot; -ShowPublishDate $true -Publish
+</code></pre>
+<p>Display the date when the page was published in the header section of the page.</p>
+<h3 id="example-12">EXAMPLE 12</h3>
+<pre><code class="lang-powershell">Set-PnPPage -Identity &quot;MyPage.aspx&quot; -Like
+</code></pre>
+<p>Likes the page.</p>
+<h3 id="example-11-1">EXAMPLE 11</h3>
+<pre><code class="lang-powershell">Set-PnPPage -Identity &quot;MyPage.aspx&quot; -Like:$false
+</code></pre>
+<p>Unlikes the page.</p>
 <h2 id="parameters">PARAMETERS</h2>
 <h3 id="-commentsenabled">-CommentsEnabled</h3>
-<p>Enables or Disables the comments on the page</p>
+<p>Enables or disables the comments on the page.</p>
 <pre><code class="lang-yaml">Type: SwitchParameter
 Parameter Sets: (All)
 
@@ -170,8 +182,19 @@ Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 </code></pre>
+<h3 id="-demotenewsarticle">-DemoteNewsArticle</h3>
+<p>Demotes an existing news post to a regular page.</p>
+<pre><code class="lang-yaml">Type: SwitchParameter
+Parameter Sets: (All)
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
 <h3 id="-headertype">-HeaderType</h3>
-<p>Sets the page header type</p>
+<p>Sets the page header type.</p>
 <pre><code class="lang-yaml">Type: PageHeaderType
 Parameter Sets: (All)
 Accepted values: None, Default, Custom
@@ -183,10 +206,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 </code></pre>
 <h3 id="-headerlayouttype">-HeaderLayoutType</h3>
-<p>Sets the page header layout type</p>
+<p>Sets the page header layout type.</p>
 <pre><code class="lang-yaml">Type: PageHeaderLayoutType
 Parameter Sets: (All)
-Accepted values: None, Default, Custom
+Accepted values: ColorBlock, CutInShape, FullWidthImage, NoImage
 
 Required: False
 Position: Named
@@ -206,10 +229,10 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 </code></pre>
 <h3 id="-layouttype">-LayoutType</h3>
-<p>Sets the layout type of the page. (Default = Article)</p>
+<p>Sets the layout type of the page.</p>
 <pre><code class="lang-yaml">Type: PageLayoutType
 Parameter Sets: (All)
-Accepted values: Article, Home, SingleWebPartAppPage, RepostPage, HeaderlessSearchResults, Spaces, Topic
+Accepted values: Article, Home, SingleWebPartAppPage,  RepostPage, HeaderlessSearchResults, Spaces, Topic
 
 Required: False
 Position: Named
@@ -229,7 +252,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 </code></pre>
 <h3 id="-promoteas">-PromoteAs</h3>
-<p>Allows to promote the page for a specific purpose (None | HomePage | NewsArticle | Template)</p>
+<p>Allows to promote the page for a specific purpose (None | HomePage | NewsArticle | Template).</p>
 <pre><code class="lang-yaml">Type: PagePromoteType
 Parameter Sets: (All)
 Accepted values: None, HomePage, NewsArticle, Template
@@ -252,8 +275,19 @@ Accept pipeline input: False
 Accept wildcard characters: False
 </code></pre>
 <h3 id="-thumbnailurl">-ThumbnailUrl</h3>
-<p>Thumbnail Url</p>
+<p>Specifies the URL of a thumbnail image.</p>
 <pre><code class="lang-yaml">Type: String
+Parameter Sets: (All)
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+<h3 id="-showpublishdate">-ShowPublishDate</h3>
+<p>Shows Published Date in the header.</p>
+<pre><code class="lang-yaml">Type: Boolean
 Parameter Sets: (All)
 
 Required: False
@@ -296,7 +330,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 </code></pre>
 <h3 id="-translate">-Translate</h3>
-<p>Creates multilingual pages for all the languages specified in the site collection</p>
+<p>Creates multilingual pages for all the languages specified in the site collection.</p>
 <pre><code class="lang-yaml">Type: SwitchParameter
 Parameter Sets: (All)
 
@@ -317,8 +351,20 @@ Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 </code></pre>
+<h3 id="-like">-Like</h3>
+<p>Likes the page, if parameter is set to false then it Unlikes the page.</p>
+<pre><code class="lang-yaml">Type: SwitchParameter
+Parameter Sets: (All)
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
 <h2 id="related-links">RELATED LINKS</h2>
 <p><a href="https://aka.ms/m365pnp">Microsoft 365 Patterns and Practices</a></p>
+
 </article>
           </div>
           <div class="hidden-sm col-md-2" role="complementary">
@@ -328,7 +374,7 @@ Accept wildcard characters: False
             </div>
           </div>        </div>
       </div>
-      
+
       <footer>
         <div class="grad-bottom"></div>
         <div class="footer">
@@ -336,13 +382,14 @@ Accept wildcard characters: False
             <span class="pull-right">
               <a href="#top">Back to top</a>
             </span>
-            
-            <span>Generated by <strong>DocFX</strong></span>
-            <img src="https://telemetry.sharepointpnp.com/@pnp.github.io/index/" alt="spacer">
+      
+      <span>Generated by <strong>DocFX</strong></span>
+            <img src="https://m365-visitor-stats.azurewebsites.net/@pnp.github.io/index/" alt="spacer">
           </div>
         </div>
-      </footer>    </div>
-    
+      </footer>
+    </div>
+
     <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
     <script type="text/javascript" src="../styles/docfx.js"></script>
     <script type="text/javascript" src="../styles/main.js"></script>

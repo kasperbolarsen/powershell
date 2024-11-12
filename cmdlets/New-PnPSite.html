@@ -1,15 +1,15 @@
 ﻿<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html lang="en">
-  
+
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>New-PnPSite | PnP PowerShell </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="New-PnPSite | PnP PowerShell ">
-    <meta name="generator" content="docfx 2.51.0.0">
-    <meta name="description" content="PnP PowerShell is an open source, community driven, PowerShell Module designed to work with Microsoft 365.">
+    <meta name="generator" content="docfx ">
+  <meta name="description" content="PnP PowerShell is an open source, community driven, PowerShell Module designed to work with Microsoft 365.">
     <link rel="shortcut icon" href="https://c.s-microsoft.com/favicon.ico?v2">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
     <link rel="stylesheet" href="../styles/docfx.css">
@@ -17,13 +17,13 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
     <meta property="docfx:navrel" content="../toc.html">
     <meta property="docfx:tocrel" content="toc.html">
-    
-    <meta property="docfx:rel" content="../">
-    <meta property="docfx:newtab" content="true">
+  
+  <meta property="docfx:rel" content="../">
+  <meta property="docfx:newtab" content="true">
   </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
       <header>
-        
+
         <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
           <div class="container">
             <div class="navbar-header">
@@ -33,7 +33,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              
+
               <a class="navbar-brand" href="../index.html">
                 <img id="logo" class="svg" src="../images/logo.svg" alt="">
               </a>
@@ -47,7 +47,7 @@
               </form>
             </div>
           </div>
-        </nav>        
+        </nav>
         <div class="subnav navbar navbar-default">
           <div class="container hide-when-search" id="breadcrumb">
             <ul class="breadcrumb">
@@ -57,17 +57,17 @@
         </div>
       </header>
       <div class="container body-content">
-        
+
         <div id="search-results">
-          <div class="search-list"></div>
+          <div class="search-list">Search Results for <span></span></div>
           <div class="sr-items">
             <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
           </div>
-          <ul id="pagination"></ul>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
         </div>
       </div>
       <div role="main" class="container body-content hide-when-search">
-        
+
         <div class="sidenav hide-when-search">
           <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
           <div class="sidetoggle collapse" id="sidetoggle">
@@ -79,16 +79,17 @@
             <article class="content wrap" id="_content" data-uid="">
                 
                   <div class="contribution-panel mobile-hide pull-right">
-                      <a href="https://github.com/pnp/powershell/blob/dev/documentation/#L1" title="Improve this Doc" class="improve-doc-lg"><i class="glyphicon glyphicon-pencil"></i></a>
+                      <a href="https://github.com/pnp/powershell/blob/dev/documentation/#L1" title="Edit this page" class="improve-doc-lg"><i class="glyphicon glyphicon-pencil"></i></a>
                   </div>
-                    <h1 id="new-pnpsite">New-PnPSite</h1>
+  <h1 id="new-pnpsite">New-PnPSite</h1>
 
 <h2 id="synopsis">SYNOPSIS</h2>
 <p>Creates a communication site, Microsoft 365 group-connected team site or Modern team site not connected to M365 group.</p>
 <h2 id="syntax">SYNTAX</h2>
 <h3 id="teamsite">TeamSite</h3>
-<pre><code class="lang-powershell">New-PnPSite -Type TeamSite -Title &lt;String&gt; -Alias &lt;String&gt; [-Description &lt;String&gt;] [-Classification &lt;String&gt;] [-IsPublic] [-Lcid &lt;UInt&gt;] [-Owners &lt;String[]&gt;] [-PreferredDataLocation &lt;Office365Geography&gt;] [-SensitivityLabel &lt;String&gt;] [-HubSiteId &lt;Guid&gt;] [-SiteAlias &lt;String&gt;] [-TimeZone &lt;PnP.Framework.Enums.TimeZone&gt;] [-Wait] [-Connection &lt;PnPConnection&gt;]
- [&lt;CommonParameters&gt;]
+<pre><code class="lang-powershell">New-PnPSite -Type TeamSite -Title &lt;String&gt; -Alias &lt;String&gt; [-Description &lt;String&gt;] [-Classification &lt;String&gt;] [-IsPublic] [-Lcid &lt;UInt&gt;] [-Owners &lt;String[]&gt;] [-PreferredDataLocation &lt;Office365Geography&gt;] [-SensitivityLabel &lt;String&gt;] [-HubSiteId &lt;Guid&gt;] [-SiteAlias &lt;String&gt;] [-TimeZone &lt;PnP.Framework.Enums.TimeZone&gt;] [-Members &lt;String[]&gt;] [-WelcomeEmailDisabled &lt;SwitchParameter&gt;] [-SubscribeNewGroupMembers &lt;SwitchParameter&gt;] [-AllowOnlyMembersToPost &lt;SwitchParameter&gt;] [-CalendarMemberReadOnly &lt;SwitchParameter&gt;] 
+[-ConnectorsDisabled &lt;SwitchParameter&gt;] [-HideGroupInOutlook &lt;SwitchParameter&gt;] [-SubscribeMembersToCalendarEventsDisabled &lt;SwitchParameter&gt;] [-SiteDesignId &lt;Guid&gt;] [-Wait] [-Connection &lt;PnPConnection&gt;]
+ 
 </code></pre>
 <h3 id="communicationsite">CommunicationSite</h3>
 <pre><code class="lang-powershell">New-PnPSite -Type CommunicationSite -Title &lt;String&gt; -Url &lt;String&gt; [-HubSiteId &lt;Guid&gt;] [-Classification &lt;String&gt;] [-SiteDesign &lt;SiteDesign&gt;] [-SiteDesignId &lt;Guid&gt;] [-Lcid &lt;UInt&gt;] [-Owner &lt;String&gt;] [-PreferredDataLocation &lt;Office365Geography&gt;] [-SensitivityLabel &lt;String&gt;] [-TimeZone &lt;PnP.Framework.Enums.TimeZone&gt;]
@@ -163,6 +164,10 @@
 <pre><code class="lang-powershell">New-PnPSite -Type TeamSite -TimeZone UTCPLUS0200_HELSINKI_KYIV_RIGA_SOFIA_TALLINN_VILNIUS -Title &quot;Contoso&quot; -Alias &quot;Contoso&quot;
 </code></pre>
 <p>This will create a new Modern team site collection connected to a Microsoft 365 Group with the title 'Contoso' and the url 'https://tenant.sharepoint.com/sites/contoso' and sets the timezone to UTC + 2 which is the Eastern European time zone.</p>
+<h3 id="example-17">EXAMPLE 17</h3>
+<pre><code class="lang-powershell">New-PnPSite -Type TeamSite -TimeZone UTCPLUS0200_HELSINKI_KYIV_RIGA_SOFIA_TALLINN_VILNIUS -Title &quot;Contoso&quot; -Alias &quot;Contoso&quot; -WelcomeEmailDisabled -SubscribeNewGroupMembers -AllowOnlyMembersToPost -CalendarMemberReadOnly -ConnectorsDisabled -HideGroupInOutlook -SubscribeMembersToCalendarEventsDisabled
+</code></pre>
+<p>This will create a new Modern team site collection connected to a Microsoft 365 Group with the title 'Contoso' and the url 'https://tenant.sharepoint.com/sites/contoso' and sets the timezone to UTC + 2 which is the Eastern European time zone. In addition to that, <strong>if application permissions are used</strong> , it will also set resource behavior options to disable welcome mails, make calendar read only , hide the group visibility in outlook and other options</p>
 <h2 id="parameters">PARAMETERS</h2>
 <h3 id="-alias">-Alias</h3>
 <p>The alias to use for the team site.</p>
@@ -220,7 +225,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 </code></pre>
 <h3 id="-hubsiteid">-HubSiteId</h3>
-<p>If specified the site will be associated to the hubsite as identified by this id</p>
+<p>If specified the site will be associated to the hubsite as identified by this id.
+<strong>Note: Only applicable when delegated permissions are used.</strong></p>
 <pre><code class="lang-yaml">Type: Guid
 Parameter Sets: (All)
 
@@ -266,7 +272,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 </code></pre>
 <h3 id="-owner">-Owner</h3>
-<p>Specifies a Site Collection Administator for the new site. Can be used when Communication Site is being created or Teams Site should not get a corresponding Microsoft 365 group.  Requires user object. If this parameter is skipped or a group object is provided, the user running New-PnPSite command will be set as a site owner. Required in case of the app-only connection.</p>
+<p>Specifies a Site Collection Administrator for the new site. Can be used when Communication Site is being created or Teams Site should not get a corresponding Microsoft 365 group.  Requires user object. If this parameter is skipped or a group object is provided, the user running New-PnPSite command will be set as a site owner. Required in case of the app-only connection.</p>
 <pre><code class="lang-yaml">Type: String
 Parameter Sets: CommunicationSite, TeamSiteWithoutMicrosoft365Group
 
@@ -322,7 +328,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 </code></pre>
 <h3 id="-sitedesign">-SiteDesign</h3>
-<p>Allows to specify an OOTB site design</p>
+<p>Allows to specify an OOTB (out of the box) site design</p>
 <pre><code class="lang-yaml">Type: SwitchParameter
 Parameter Sets: CommunicationSite
 Accepted values: Blank, Topic, Showcase
@@ -336,7 +342,7 @@ Accept wildcard characters: False
 <h3 id="-sitedesignid">-SiteDesignId</h3>
 <p>Allows to specify a custom site design</p>
 <pre><code class="lang-yaml">Type: Guid
-Parameter Sets: CommunicationSite, TeamSiteWithoutMicrosoft365Group
+Parameter Sets: CommunicationSite, TeamSiteWithoutMicrosoft365Group, TeamSite
 
 Required: False
 Position: Named
@@ -357,9 +363,116 @@ Accept wildcard characters: False
 </code></pre>
 <h3 id="-timezone">-TimeZone</h3>
 <p>Specifies the timezone of the site to create.
-To get the full list of timezone that you can select, you can visit <a href="https://learn.microsoft.com/dotnet/api/officedevpnp.core.enums.timezone">https://learn.microsoft.com/dotnet/api/officedevpnp.core.enums.timezone</a></p>
+To get the full list of timezone that you can select, you can visit <a href="https://pnp.github.io/pnpframework/api/PnP.Framework.Enums.TimeZone.html">https://pnp.github.io/pnpframework/api/PnP.Framework.Enums.TimeZone.html</a></p>
 <pre><code class="lang-yaml">Type: Framework.Enums.TimeZone
 Parameter Sets: CommunicationSite, TeamSiteWithoutMicrosoft365Group, TeamSite
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+<h3 id="-members">-Members</h3>
+<p>Set the members of the team site connected group. Specify the UPN values in a string array.
+<strong>Note: Only applicable when application permissions are used.</strong></p>
+<pre><code class="lang-yaml">Type: String[]
+Parameter Sets: TeamSite
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+<h3 id="-welcomeemaildisabled">-WelcomeEmailDisabled</h3>
+<p>If true, welcome emails are not sent to new members.
+<strong>Note: Only applicable when application permissions are used.</strong></p>
+<pre><code class="lang-yaml">Type: SwitchParameter
+Parameter Sets: TeamSite
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+<h3 id="-subscribenewgroupmembers">-SubscribeNewGroupMembers</h3>
+<p>If true, group members are subscribed to receive group conversations.
+<strong>Note: Only applicable when application permissions are used.</strong></p>
+<pre><code class="lang-yaml">Type: SwitchParameter
+Parameter Sets: TeamSite
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+<h3 id="-subscribememberstocalendareventsdisabled">-SubscribeMembersToCalendarEventsDisabled</h3>
+<p>If true, members are not subscribed to the group's calendar events in Outlook.
+<strong>Note: Only applicable when application permissions are used.</strong></p>
+<pre><code class="lang-yaml">Type: SwitchParameter
+Parameter Sets: TeamSite
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+<h3 id="-hidegroupinoutlook">-HideGroupInOutlook</h3>
+<p>If true, members are not subscribed to the group's calendar events in Outlook.
+<strong>Note: Only applicable when application permissions are used.</strong></p>
+<pre><code class="lang-yaml">Type: SwitchParameter
+Parameter Sets: TeamSite
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+<h3 id="-connectorsdisabled">-ConnectorsDisabled</h3>
+<p>If true, changes made to the group in Exchange Online are not synced back to on-premises Active Directory. <strong>Note: Only applicable when application permissions are used.</strong></p>
+<pre><code class="lang-yaml">Type: SwitchParameter
+Parameter Sets: TeamSite
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+<h3 id="-calendarmemberreadonly">-CalendarMemberReadOnly</h3>
+<p>If true, members can view the group calendar in Outlook but cannot make changes.
+<strong>Note: Only applicable when application permissions are used.</strong></p>
+<pre><code class="lang-yaml">Type: SwitchParameter
+Parameter Sets: TeamSite
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+<h3 id="-allowonlymemberstopost">-AllowOnlyMembersToPost</h3>
+<p>If true, only group members can post conversations to the group.
+<strong>Note: Only applicable when application permissions are used.</strong></p>
+<pre><code class="lang-yaml">Type: SwitchParameter
+Parameter Sets: TeamSite
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+<h3 id="-sitedesignid-1">-SiteDesignId</h3>
+<p>The ID of the Site Design to apply.
+<strong>Note: Only applicable when delegated permissions are used.</strong></p>
+<pre><code class="lang-yaml">Type: GUID
+Parameter Sets: TeamSite
 
 Required: False
 Position: Named
@@ -391,7 +504,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 </code></pre>
 <h2 id="related-links">RELATED LINKS</h2>
-<p><a href="https://aka.ms/m365pnp">Microsoft 365 Patterns and Practices</a></p>
+<p><a href="https://aka.ms/m365pnp">Microsoft 365 Patterns and Practices</a>
+<a href="https://pnp.github.io/pnpframework/api/PnP.Framework.Enums.TimeZone.html">https://pnp.github.io/pnpframework/api/PnP.Framework.Enums.TimeZone.html</a></p>
+
 </article>
           </div>
           <div class="hidden-sm col-md-2" role="complementary">
@@ -401,7 +516,7 @@ Accept wildcard characters: False
             </div>
           </div>        </div>
       </div>
-      
+
       <footer>
         <div class="grad-bottom"></div>
         <div class="footer">
@@ -409,13 +524,14 @@ Accept wildcard characters: False
             <span class="pull-right">
               <a href="#top">Back to top</a>
             </span>
-            
-            <span>Generated by <strong>DocFX</strong></span>
-            <img src="https://telemetry.sharepointpnp.com/@pnp.github.io/index/" alt="spacer">
+      
+      <span>Generated by <strong>DocFX</strong></span>
+            <img src="https://m365-visitor-stats.azurewebsites.net/@pnp.github.io/index/" alt="spacer">
           </div>
         </div>
-      </footer>    </div>
-    
+      </footer>
+    </div>
+
     <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
     <script type="text/javascript" src="../styles/docfx.js"></script>
     <script type="text/javascript" src="../styles/main.js"></script>

@@ -1,15 +1,15 @@
 ﻿<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html lang="en">
-  
+
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Add-PnPTeamsTab | PnP PowerShell </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Add-PnPTeamsTab | PnP PowerShell ">
-    <meta name="generator" content="docfx 2.51.0.0">
-    <meta name="description" content="PnP PowerShell is an open source, community driven, PowerShell Module designed to work with Microsoft 365.">
+    <meta name="generator" content="docfx ">
+  <meta name="description" content="PnP PowerShell is an open source, community driven, PowerShell Module designed to work with Microsoft 365.">
     <link rel="shortcut icon" href="https://c.s-microsoft.com/favicon.ico?v2">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
     <link rel="stylesheet" href="../styles/docfx.css">
@@ -17,13 +17,13 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
     <meta property="docfx:navrel" content="../toc.html">
     <meta property="docfx:tocrel" content="toc.html">
-    
-    <meta property="docfx:rel" content="../">
-    <meta property="docfx:newtab" content="true">
+  
+  <meta property="docfx:rel" content="../">
+  <meta property="docfx:newtab" content="true">
   </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
       <header>
-        
+
         <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
           <div class="container">
             <div class="navbar-header">
@@ -33,7 +33,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              
+
               <a class="navbar-brand" href="../index.html">
                 <img id="logo" class="svg" src="../images/logo.svg" alt="">
               </a>
@@ -47,7 +47,7 @@
               </form>
             </div>
           </div>
-        </nav>        
+        </nav>
         <div class="subnav navbar navbar-default">
           <div class="container hide-when-search" id="breadcrumb">
             <ul class="breadcrumb">
@@ -57,17 +57,17 @@
         </div>
       </header>
       <div class="container body-content">
-        
+
         <div id="search-results">
-          <div class="search-list"></div>
+          <div class="search-list">Search Results for <span></span></div>
           <div class="sr-items">
             <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
           </div>
-          <ul id="pagination"></ul>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
         </div>
       </div>
       <div role="main" class="container body-content hide-when-search">
-        
+
         <div class="sidenav hide-when-search">
           <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
           <div class="sidetoggle collapse" id="sidetoggle">
@@ -79,19 +79,20 @@
             <article class="content wrap" id="_content" data-uid="">
                 
                   <div class="contribution-panel mobile-hide pull-right">
-                      <a href="https://github.com/pnp/powershell/blob/dev/documentation/#L1" title="Improve this Doc" class="improve-doc-lg"><i class="glyphicon glyphicon-pencil"></i></a>
+                      <a href="https://github.com/pnp/powershell/blob/dev/documentation/#L1" title="Edit this page" class="improve-doc-lg"><i class="glyphicon glyphicon-pencil"></i></a>
                   </div>
-                    <h1 id="add-pnpteamstab">Add-PnPTeamsTab</h1>
+  <h1 id="add-pnpteamstab">Add-PnPTeamsTab</h1>
 
 <h2 id="synopsis">SYNOPSIS</h2>
 <p><strong>Required Permissions</strong></p>
 <ul>
 <li>Microsoft Graph API: Group.ReadWrite.All</li>
 </ul>
-<p>Adds a tab to an existing Channel. Note that the <code>-ContentUrl</code> is a 'dynamic' parameter and will only be valid for tab types that support it.</p>
+<p>Adds a tab to an existing Channel. Note that the <code>-ContentUrl</code> is a 'dynamic' parameter and will only be valid for tab types that support it.
+Also, some <code>-Type</code> values are not configurable due to Microsoft Graph API limitations (i.e.: PowerBI).</p>
 <h2 id="syntax">SYNTAX</h2>
 <pre><code class="lang-powershell">Add-PnPTeamsTab -Team &lt;TeamsTeamPipeBind&gt; -Channel &lt;TeamsChannelPipeBind&gt; -DisplayName &lt;String&gt;
- -Type &lt;TeamTabType&gt; -ContentUrl &lt;String&gt; [&lt;CommonParameters&gt;]
+ -Type &lt;TeamTabType&gt; -ContentUrl &lt;String&gt; 
 </code></pre>
 <h2 id="description">DESCRIPTION</h2>
 <p>Allows to add a tab to an existing Channel. By using <code>ContentUrl</code> option you may specify the content of the tab.</p>
@@ -112,6 +113,23 @@
 <pre><code class="lang-powershell">Add-PnPTeamsTab -Team &quot;My Team&quot; -Channel &quot;My Channel&quot; -DisplayName &quot;My Excel Tab&quot; -Type Excel -ContentUrl &quot;https://contoso.sharepoint.com/sites/Marketing/Shared Documents/My Excel File.csv&quot; -EntityId 6
 </code></pre>
 <p>Adds the &quot;My Excel file.csv&quot; with ID 6 as a tab from the Marketing site.</p>
+<h3 id="example-5">EXAMPLE 5</h3>
+<pre><code class="lang-powershell">$PlannerPlan = Get-PnPPlannerPlan -Group $groupId -Identity $PlannerName
+if(-not $PlannerPlan)
+{
+    $PlannerPlan = New-PnPPlannerPlan -Group $groupId -Title $PlannerName
+}
+$bucket = Add-PnPPlannerBucket -Group $groupId -Plan $PlannerPlan.Id -Name &quot;Tasks&quot;
+Add-PnPPlannerTask -Group $groupId -Plan $PlannerPlan.Id -Bucket $bucket.Id -Title &quot;plannertaskA&quot;
+
+$teamsChannel = Get-PnPTeamsChannel -Team $groupId -Identity &quot;General&quot;
+
+$tenant = &quot;contoso.onmicrosoft.com&quot;
+
+$teamsTab = Add-PnPTeamsTab -Team $groupId -Channel $teamsChannel -DisplayName &quot;My Tab Name&quot; -Type Planner -ContentUrl &quot;https://tasks.office.com/$tenant/Home/PlannerFrame?page=7&amp;planId=$($PlannerPlan.Id)&quot;
+
+</code></pre>
+<p>Gets the existing Planner if one exists in the Group, otherwise creates a new. Adds a new bucket and creates a few new Tasks. Finally creates a Tab in the channel named &quot;My Tab Name&quot;</p>
 <h2 id="parameters">PARAMETERS</h2>
 <h3 id="-channel">-Channel</h3>
 <p>Specify the channel id or name of the team to retrieve.</p>
@@ -205,6 +223,7 @@ Accept wildcard characters: False
 </code></pre>
 <h2 id="related-links">RELATED LINKS</h2>
 <p><a href="https://aka.ms/m365pnp">Microsoft 365 Patterns and Practices</a></p>
+
 </article>
           </div>
           <div class="hidden-sm col-md-2" role="complementary">
@@ -214,7 +233,7 @@ Accept wildcard characters: False
             </div>
           </div>        </div>
       </div>
-      
+
       <footer>
         <div class="grad-bottom"></div>
         <div class="footer">
@@ -222,13 +241,14 @@ Accept wildcard characters: False
             <span class="pull-right">
               <a href="#top">Back to top</a>
             </span>
-            
-            <span>Generated by <strong>DocFX</strong></span>
-            <img src="https://telemetry.sharepointpnp.com/@pnp.github.io/index/" alt="spacer">
+      
+      <span>Generated by <strong>DocFX</strong></span>
+            <img src="https://m365-visitor-stats.azurewebsites.net/@pnp.github.io/index/" alt="spacer">
           </div>
         </div>
-      </footer>    </div>
-    
+      </footer>
+    </div>
+
     <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
     <script type="text/javascript" src="../styles/docfx.js"></script>
     <script type="text/javascript" src="../styles/main.js"></script>

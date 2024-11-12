@@ -1,15 +1,15 @@
 ﻿<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html lang="en">
-  
+
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>New-PnPAzureCertificate | PnP PowerShell </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="New-PnPAzureCertificate | PnP PowerShell ">
-    <meta name="generator" content="docfx 2.51.0.0">
-    <meta name="description" content="PnP PowerShell is an open source, community driven, PowerShell Module designed to work with Microsoft 365.">
+    <meta name="generator" content="docfx ">
+  <meta name="description" content="PnP PowerShell is an open source, community driven, PowerShell Module designed to work with Microsoft 365.">
     <link rel="shortcut icon" href="https://c.s-microsoft.com/favicon.ico?v2">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
     <link rel="stylesheet" href="../styles/docfx.css">
@@ -17,13 +17,13 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
     <meta property="docfx:navrel" content="../toc.html">
     <meta property="docfx:tocrel" content="toc.html">
-    
-    <meta property="docfx:rel" content="../">
-    <meta property="docfx:newtab" content="true">
+  
+  <meta property="docfx:rel" content="../">
+  <meta property="docfx:newtab" content="true">
   </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
       <header>
-        
+
         <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
           <div class="container">
             <div class="navbar-header">
@@ -33,7 +33,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              
+
               <a class="navbar-brand" href="../index.html">
                 <img id="logo" class="svg" src="../images/logo.svg" alt="">
               </a>
@@ -47,7 +47,7 @@
               </form>
             </div>
           </div>
-        </nav>        
+        </nav>
         <div class="subnav navbar navbar-default">
           <div class="container hide-when-search" id="breadcrumb">
             <ul class="breadcrumb">
@@ -57,17 +57,17 @@
         </div>
       </header>
       <div class="container body-content">
-        
+
         <div id="search-results">
-          <div class="search-list"></div>
+          <div class="search-list">Search Results for <span></span></div>
           <div class="sr-items">
             <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
           </div>
-          <ul id="pagination"></ul>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
         </div>
       </div>
       <div role="main" class="container body-content hide-when-search">
-        
+
         <div class="sidenav hide-when-search">
           <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
           <div class="sidetoggle collapse" id="sidetoggle">
@@ -79,9 +79,9 @@
             <article class="content wrap" id="_content" data-uid="">
                 
                   <div class="contribution-panel mobile-hide pull-right">
-                      <a href="https://github.com/pnp/powershell/blob/dev/documentation/#L1" title="Improve this Doc" class="improve-doc-lg"><i class="glyphicon glyphicon-pencil"></i></a>
+                      <a href="https://github.com/pnp/powershell/blob/dev/documentation/#L1" title="Edit this page" class="improve-doc-lg"><i class="glyphicon glyphicon-pencil"></i></a>
                   </div>
-                    <h1 id="new-pnpazurecertificate">New-PnPAzureCertificate</h1>
+  <h1 id="new-pnpazurecertificate">New-PnPAzureCertificate</h1>
 
 <h2 id="synopsis">SYNOPSIS</h2>
 <p>Generate a new 2048bit self-signed certificate and manifest settings for use when using CSOM via an app-only ADAL application.</p>
@@ -92,23 +92,27 @@
 <h2 id="syntax">SYNTAX</h2>
 <pre><code class="lang-powershell">New-PnPAzureCertificate [-CommonName &lt;String&gt;] [-Country &lt;String&gt;] [-State &lt;String&gt;]
  [-Locality &lt;String&gt;] [-Organization &lt;String&gt;] [-OrganizationUnit &lt;String&gt;] [-OutPfx &lt;String&gt;]
- [-OutCert &lt;String&gt;] [-ValidYears &lt;Int32&gt;] [-CertificatePassword &lt;SecureString&gt;] [-Store &lt;StoreLocation&gt;] [&lt;CommonParameters&gt;]
+ [-OutCert &lt;String&gt;] [-ValidYears &lt;Int32&gt;] [-CertificatePassword &lt;SecureString&gt;] [-Store &lt;StoreLocation&gt;] [-SanNames &lt;String[]&gt;]
 </code></pre>
 <h2 id="description">DESCRIPTION</h2>
-<p>Allows to create a self-signed certificate and manifest settings to be used with CSOM via an app-only ADAL application.</p>
+<p>Allows to create a self-signed certificate and manifest settings to be used with PnP PowerShell via an app-only application registration.</p>
 <h2 id="examples">EXAMPLES</h2>
 <h3 id="example-1">EXAMPLE 1</h3>
 <pre><code class="lang-powershell">New-PnPAzureCertificate -OutPfx pnp.pfx -OutCert pnp.cer
 </code></pre>
-<p>This will generate a default self-signed certificate named &quot;pnp.contoso.com&quot; valid for 10 years and output a pfx and cer file to disk. The private key file (pfx) will not be password protected.</p>
+<p>This will generate a default self-signed certificate named &quot;pnp.contoso.com&quot; valid for 10 years and output a pfx and cer file to disk. The private key file (pfx) will not be password protected. It will have localhost and the machinename as the Subject Alternative Names.</p>
 <h3 id="example-2">EXAMPLE 2</h3>
 <pre><code class="lang-powershell">New-PnPAzureCertificate -CommonName &quot;My Certificate&quot; -ValidYears 30
 </code></pre>
-<p>This will output a certificate named &quot;My Certificate&quot; which expires in 30 years from now to the screen. It will not write the certificate files to disk.</p>
+<p>This will output a certificate named &quot;My Certificate&quot; which expires in 30 years from now to the screen. It will not write the certificate files to disk. It will have localhost and the machinename as the Subject Alternative Names.</p>
 <h3 id="example-3">EXAMPLE 3</h3>
 <pre><code class="lang-powershell">New-PnPAzureCertificate -OutPfx pnp.pfx -OutCert pnp.cer -CertificatePassword (ConvertTo-SecureString -String &quot;pass@word1&quot; -AsPlainText -Force)
 </code></pre>
-<p>This will generate a default self-signed certificate named &quot;pnp.contoso.com&quot; valid for 10 years and output a pfx and cer file to disk. The pfx file will have the password pass@word1 set on it.</p>
+<p>This will generate a default self-signed certificate named &quot;pnp.contoso.com&quot; valid for 10 years and output a pfx and cer file to disk. The pfx file will have the password pass@word1 set on it. It will have localhost and the machinename as the Subject Alternative Names.</p>
+<h3 id="example-4">EXAMPLE 4</h3>
+<pre><code class="lang-powershell">New-PnPAzureCertificate -OutPfx pnp.pfx -OutCert pnp.cer -SanNames $null
+</code></pre>
+<p>This will generate a default self-signed certificate named &quot;pnp.contoso.com&quot; valid for 10 years and output a pfx and cer file to disk. There will not be any Subject Alternative Names in the generated certificate.</p>
 <h2 id="parameters">PARAMETERS</h2>
 <h3 id="-certificatepassword">-CertificatePassword</h3>
 <p>Optional certificate password</p>
@@ -198,6 +202,19 @@ Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 </code></pre>
+<h3 id="-sannames">-SanNames</h3>
+<p>One or more DNS names to add to the certificate as Subject Alternative Names. Separate multiple names with a comma, i.e. &quot;host1.domain.com&quot;,&quot;host2.domain.com&quot;.</p>
+<p>Provide $null to not add any Subject Alternative names to the certificate.</p>
+<p>Omit to add localhost and the machine name as Subject Alternative Names.</p>
+<pre><code class="lang-yaml">Type: String[]
+Parameter Sets: (All)
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
 <h3 id="-state">-State</h3>
 <p>State or Province Name (full name)</p>
 <pre><code class="lang-yaml">Type: String
@@ -231,6 +248,7 @@ Accept pipeline input: False
 </code></pre>
 <h2 id="related-links">RELATED LINKS</h2>
 <p><a href="https://aka.ms/m365pnp">Microsoft 365 Patterns and Practices</a></p>
+
 </article>
           </div>
           <div class="hidden-sm col-md-2" role="complementary">
@@ -240,7 +258,7 @@ Accept pipeline input: False
             </div>
           </div>        </div>
       </div>
-      
+
       <footer>
         <div class="grad-bottom"></div>
         <div class="footer">
@@ -248,13 +266,14 @@ Accept pipeline input: False
             <span class="pull-right">
               <a href="#top">Back to top</a>
             </span>
-            
-            <span>Generated by <strong>DocFX</strong></span>
-            <img src="https://telemetry.sharepointpnp.com/@pnp.github.io/index/" alt="spacer">
+      
+      <span>Generated by <strong>DocFX</strong></span>
+            <img src="https://m365-visitor-stats.azurewebsites.net/@pnp.github.io/index/" alt="spacer">
           </div>
         </div>
-      </footer>    </div>
-    
+      </footer>
+    </div>
+
     <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
     <script type="text/javascript" src="../styles/docfx.js"></script>
     <script type="text/javascript" src="../styles/main.js"></script>

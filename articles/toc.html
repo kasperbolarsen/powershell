@@ -5,62 +5,137 @@
       <form class="toc-filter">
         <span class="glyphicon glyphicon-filter filter-icon"></span>
         <span class="glyphicon glyphicon-remove clear-icon" id="toc_filter_clear"></span>
-        <input type="text" id="toc_filter_input" placeholder="Enter here to filter..." onkeypress="if(event.keyCode==13) {return false;}">
+        <input type="text" id="toc_filter_input" placeholder="Filter by title" onkeypress="if(event.keyCode==13) {return false;}">
       </form>
     </div>
     <div class="sidetoc">
       <div class="toc" id="toc">
-          
+
           <ul class="nav level1">
                 <li>
-                    <a href="installation.html" name="" title="Installation">Installation</a>
-                </li>
-                <li>
-                    <a href="updatenotifications.html" name="" title="Update notifications">Update notifications</a>
-                </li>
-                <li>
-                    <a href="authentication.html" name="" title="Authentication">Authentication</a>
-                </li>
-                <li>
-                    <a href="credentialmanagement.html" name="" title="Credential Management">Credential Management</a>
-                </li>
-                <li>
-                    <a href="connecting.html" name="" title="Connecting to SharePoint">Connecting to SharePoint</a>
-                </li>
-                <li>
-                    <a href="configuration.html" name="" title="Configure PnP PowerShell">Configure PnP PowerShell</a>
-                </li>
-                <li>
-                    <a href="batching.html" name="" title="Batching in PnP PowerShell">Batching in PnP PowerShell</a>
-                </li>
-                <li>
-                    <a href="upgrading.html" name="" title="Upgrading from the Legacy version">Upgrading from the Legacy version</a>
-                </li>
-                <li>
-                    <a href="azurefunctions.html" name="" title="Using PnP PowerShell in Azure Functions">Using PnP PowerShell in Azure Functions</a>
-                </li>
-                <li>
-                    <a href="azurecloudshell.html" name="" title="Using PnP PowerShell in Azure Cloud Shell">Using PnP PowerShell in Azure Cloud Shell</a>
-                </li>
-                <li>
-                    <a href="docker.html" name="" title="Using PnP PowerShell in Docker containers">Using PnP PowerShell in Docker containers</a>
-                </li>
-                <li>
-                    <a href="dev-containers.html" name="" title="Using PnP PowerShell in Visual Studio Development Containers">Using PnP PowerShell in Visual Studio Development Containers</a>
+                    <span class="expand-stub"></span>
+                    <a>Getting started</a>
+
+                    <ul class="nav level2">
+                          <li>
+                              <a href="installation.html" name="" title="Installation">Installation</a>
+                          </li>
+                          <li>
+                              <a href="registerapplication.html" name="" title="Register your application">Register your application</a>
+                          </li>
+                          <li>
+                              <a href="determinepermissions.html" name="" title="Determine permissions">Determine permissions</a>
+                          </li>
+                          <li>
+                              <a href="authentication.html" name="" title="Connecting and authenticating">Connecting and authenticating</a>
+                          </li>
+                    </ul>
                 </li>
                 <li>
                     <span class="expand-stub"></span>
-                    <a>For Developers</a>
-                    
+                    <a>Configure PnP PowerShell</a>
+
                     <ul class="nav level2">
                           <li>
-                              <a href="buildingsource.html" name="" title="Building the project">Building the project</a>
+                              <a href="telemetry.html" name="" title="Telemetry">Telemetry</a>
                           </li>
                           <li>
-                              <a href="runningtests.html" name="" title="Running the tests">Running the tests</a>
+                              <a href="updatenotifications.html" name="" title="Version checks">Version checks</a>
                           </li>
                           <li>
-                              <a href="building-documentation.html" name="" title="Building the documentation">Building the documentation</a>
+                              <a href="defaultclientid.html" name="" title="Default Client Id">Default Client Id</a>
+                          </li>
+                    </ul>
+                </li>
+                <li>
+                    <span class="expand-stub"></span>
+                    <a>Using PnP PowerShell in Azure</a>
+
+                    <ul class="nav level2">
+                          <li>
+                              <a href="azure.html" name="" title="Introduction">Introduction</a>
+                          </li>
+                          <li>
+                              <a href="azurefunctions.html" name="" title="Azure Functions">Azure Functions</a>
+                          </li>
+                          <li>
+                              <a href="azureautomationrunbook.html" name="" title="Azure Automation Runbooks">Azure Automation Runbooks</a>
+                          </li>
+                          <li>
+                              <a href="azurecloudshell.html" name="" title="Azure Cloud Shell">Azure Cloud Shell</a>
+                          </li>
+                    </ul>
+                </li>
+                <li>
+                    <span class="expand-stub"></span>
+                    <a>Using PnP PowerShell in Containers</a>
+
+                    <ul class="nav level2">
+                          <li>
+                              <a href="docker.html" name="" title="Docker containers">Docker containers</a>
+                          </li>
+                          <li>
+                              <a href="dev-containers.html" name="" title="Visual Studio Development Containers">Visual Studio Development Containers</a>
+                          </li>
+                    </ul>
+                </li>
+                <li>
+                    <span class="expand-stub"></span>
+                    <a>Advanced topics</a>
+
+                    <ul class="nav level2">
+                          <li>
+                              <a href="handlingmultitenantauth" name="" title="How to handle authenticating to multiple tenants">How to handle authenticating to multiple tenants</a>
+                          </li>
+                          <li>
+                              <a href="microsoftsearch.html" name="" title="Using Microsoft Search with PnP PowerShell">Using Microsoft Search with PnP PowerShell</a>
+                          </li>
+                          <li>
+                              <a href="batching.html" name="" title="Batching in PnP PowerShell">Batching in PnP PowerShell</a>
+                          </li>
+                          <li>
+                              <a href="upgrading.html" name="" title="Upgrading from the Legacy version">Upgrading from the Legacy version</a>
+                          </li>
+                          <li>
+                              <a href="credentialmanagement.html" name="" title="Credential Management">Credential Management</a>
+                          </li>
+                    </ul>
+                </li>
+                <li>
+                    <span class="expand-stub"></span>
+                    <a>How to contribute</a>
+
+                    <ul class="nav level2">
+                          <li>
+                              <a href="gettingstartedcontributing.html" name="" title="Getting started">Getting started</a>
+                          </li>
+                          <li>
+                              <a href="buildingfolderstructure.html" name="" title="Folder structure">Folder structure</a>
+                          </li>
+                          <li>
+                              <a href="buildinglocalpnpbuild.html" name="" title="Using a local version of PnP Core/Framework">Using a local version of PnP Core/Framework</a>
+                          </li>
+                          <li>
+                              <a href="runningtests.html" name="" title="Running unit tests">Running unit tests</a>
+                          </li>
+                          <li>
+                              <a href="buildingdocker.html" name="" title="Building using docker">Building using docker</a>
+                          </li>
+                          <li>
+                              <a href="permissionattributes.html" name="" title="Working with permission attributes">Working with permission attributes</a>
+                          </li>
+                    </ul>
+                </li>
+                <li>
+                    <span class="expand-stub"></span>
+                    <a>Useful helper tools</a>
+
+                    <ul class="nav level2">
+                          <li>
+                              <a href="powershellpredictor.html" name="" title="PnP PowerShell predictor">PnP PowerShell predictor</a>
+                          </li>
+                          <li>
+                              <a href="vscodeextension.html" name="" title="Visual Studio Code extension">Visual Studio Code extension</a>
                           </li>
                     </ul>
                 </li>
